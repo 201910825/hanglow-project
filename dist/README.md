@@ -18,3 +18,4 @@
 - `public`: 정적 파일 (이미지, 아이콘 등)
 - `package.json`: 프로젝트 의존성 정보
 - `next.config.js`: Next.js 설정 파일
+

@@ -1,0 +1,581 @@
+/* 공통 스타일 */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  color: white;
+}
+
+.iconWrapper {
+  margin-bottom: 1rem;
+}
+
+.featureIcon {
+  width: 60px;
+  height: 60px;
+  filter: brightness(0) invert(1);
+}
+
+.header h3 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+/* 위치 탐색 컴포넌트 */
+.locationFinder {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.searchSection {
+  margin-bottom: 2rem;
+}
+
+.searchButton {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.searchButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+.searchButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loadingSpinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff40;
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.resultsSection h4 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.spotCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.spotCard:hover {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.spotInfo h5 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.spotDetails {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.distance, .rating, .discount {
+  color: #666;
+}
+
+.discount {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.directionButton {
+  padding: 0.5rem 1rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.directionButton:hover {
+  background: #1976d2;
+}
+
+.mapPlaceholder {
+  text-align: center;
+  padding: 2rem;
+  background: #f0f7ff;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.mapIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 쿠폰 컴포넌트 */
+.couponComponent {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.statsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  border-radius: 12px;
+}
+
+.statNumber {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.couponsSection h4 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.couponCard {
+  display: flex;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.couponCard:hover {
+  border-color: #ffd93d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 217, 61, 0.3);
+}
+
+.usedCoupon {
+  opacity: 0.6;
+  filter: grayscale(100%);
+}
+
+.couponLeft {
+  background: linear-gradient(135deg, #ffd93d, #ff9a9e);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  min-width: 80px;
+}
+
+.discountBadge {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+.couponRight {
+  flex: 1;
+  padding: 1rem;
+  background: white;
+}
+
+.couponHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.couponHeader h5 {
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.couponCode {
+  background: #f8f9fa;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #666;
+  font-family: monospace;
+}
+
+.couponDescription {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.couponFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.expiry {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.useButton {
+  padding: 0.5rem 1rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.useButton:hover {
+  background: #45a049;
+}
+
+.usedLabel {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.newCouponSection {
+  margin-top: 2rem;
+}
+
+.newCouponBanner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  border-radius: 12px;
+  color: white;
+}
+
+.newCouponBanner span {
+  font-size: 1.5rem;
+}
+
+.newCouponBanner h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1rem;
+}
+
+.newCouponBanner p {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.checkButton {
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 번역 컴포넌트 */
+.translationComponent {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.languageSelector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.languageBox {
+  flex: 1;
+}
+
+.languageSelect {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.swapButton {
+  padding: 0.8rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.swapButton:hover {
+  background: #1976d2;
+  transform: rotate(180deg);
+}
+
+.translationBox {
+  margin-bottom: 2rem;
+}
+
+.inputSection, .outputSection {
+  margin-bottom: 1rem;
+}
+
+.textAreaWrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.textArea {
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem 3rem 1rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.textArea:focus {
+  outline: none;
+  border-color: #2196f3;
+}
+
+.voiceButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0.5rem;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.voiceButton:hover {
+  background: #ee5a24;
+}
+
+.listening {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.translateButton {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.translateButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.translateButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.resultBox {
+  min-height: 100px;
+  padding: 1rem;
+  background: #f0f7ff;
+  border-radius: 12px;
+  border: 2px solid #e3f2fd;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingDots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loadingDots span {
+  width: 8px;
+  height: 8px;
+  background: #2196f3;
+  border-radius: 50%;
+  animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.loadingDots span:nth-child(1) { animation-delay: -0.32s; }
+.loadingDots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+.speakButton {
+  padding: 0.5rem 1rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.speakButton:hover {
+  background: #45a049;
+}
+
+.quickPhrasesSection h4 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.phraseGrid {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.phraseButton {
+  padding: 0.8rem;
+  background: #fff;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.phraseButton:hover {
+  border-color: #2196f3;
+  background: #f0f7ff;
+}
+
+.featuresInfo {
+  display: grid;
+  gap: 1rem;
+}
+
+.featureInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.featureInfo span {
+  font-size: 1.5rem;
+}
+
+.featureInfo h5 {
+  margin: 0 0 0.3rem 0;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.featureInfo p {
+  margin: 0;
+  color: #666;
+  font-size: 0.8rem;
+} 

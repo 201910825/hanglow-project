@@ -15,7 +15,7 @@ export default function ScanPage() {
   const [scanning, setScanning] = useState(false);
   const [scanned, setScanned] = useState(false);
   const [productInfo, setProductInfo] = useState<ScannedProduct | null>(null);
-  const { user, addScannedProduct, saveProduct } = useHanglowStore();
+  const { user, addScannedProduct, saveProduct, recommendedProducts } = useHanglowStore();
   
   // 번역 함수 단축어
   const t = (key: string) => getTranslation(key, user.language);
@@ -29,24 +29,21 @@ export default function ScanPage() {
       setScanning(false);
       setScanned(true);
       
-      // 가상의 제품 정보
-      const scannedProduct = {
-        id: 'p3',
-        name: '라네즈 워터 슬리핑 마스크',
-        brand: '라네즈',
-        category: '스킨케어',
-        description: '수분을 공급하는 슬리핑 마스크',
-        imageUrl: '/images/products/laneige-mask.jpg',
-        price: 28000,
-        ingredients: [
-          '정제수', '부틸렌글라이콜', '시클로펜타실록산', '글리세린',
-          '트레할로스', '나이아신아마이드', '소듐하이알루로네이트'
-        ],
-        howToUse: '세안 후 스킨케어 마지막 단계에서 사용하세요. 적당량을 얼굴 전체에 바르고 잠들기 전에 사용하세요. 다음 아침에 미온수로 씻어내세요.'
-      };
-      
-      setProductInfo(scannedProduct);
-      addScannedProduct(scannedProduct.id);
+      // 스토어에서 실제 제품 정보 가져오기
+      const baseProduct = recommendedProducts.find(p => p.id === 'p3');
+      if (baseProduct) {
+        const scannedProduct = {
+          ...baseProduct,
+          ingredients: [
+            '정제수', '부틸렌글라이콜', '시클로펜타실록산', '글리세린',
+            '트레할로스', '나이아신아마이드', '소듐하이알루로네이트'
+          ],
+          howToUse: '세안 후 스킨케어 마지막 단계에서 사용하세요. 적당량을 얼굴 전체에 바르고 잠들기 전에 사용하세요. 다음 아침에 미온수로 씻어내세요.'
+        };
+        
+        setProductInfo(scannedProduct);
+        addScannedProduct(scannedProduct.id);
+      }
     }, 2000);
   };
   

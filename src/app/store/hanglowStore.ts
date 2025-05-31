@@ -56,7 +56,7 @@ export const useHanglowStore = create(
           brand: '아이오페',
           category: '스킨케어',
           description: '피부 탄력을 개선하는 레티놀 세럼',
-          imageUrl: '/images/products/iope-retinol.jpg',
+          imageUrl: 'https://sokoglam.com/cdn/shop/files/Soko-Glam-PDP-IOPE-Retinol-Expert-0.3-01_860x.png?v=1740782606',
           price: 45000,
         },
         {
@@ -65,7 +65,7 @@ export const useHanglowStore = create(
           brand: '롬앤',
           category: '립 메이크업',
           description: '오래 지속되는 촉촉한 립 틴트',
-          imageUrl: '/images/products/romand-tint.jpg',
+          imageUrl: 'https://romand.us/cdn/shop/products/juicy.jpg?v=1634253225',
           price: 12000,
         },
         {
@@ -74,7 +74,7 @@ export const useHanglowStore = create(
           brand: '라네즈',
           category: '스킨케어',
           description: '수분을 공급하는 슬리핑 마스크',
-          imageUrl: '/images/products/laneige-mask.jpg',
+          imageUrl: 'https://sg.laneige.com/cdn/shop/products/20201207_final_Water-Sleeping-Mask-EX_thumbnail05.png?v=1735187019',
           price: 28000,
         },
         {
@@ -83,7 +83,7 @@ export const useHanglowStore = create(
           brand: '이니스프리',
           category: '스킨케어',
           description: '그린티 추출물이 함유된 수분 세럼',
-          imageUrl: '/images/products/innisfree-greentea.jpg',
+          imageUrl: 'https://us.innisfree.com/cdn/shop/files/IF_GT-HS_PDP_01_Packshot_2024_1080x1080_00f05620-abcb-48b1-8f18-1d0248dd1bfe_1080x.jpg?v=1718286252',
           price: 25000,
         },
         {
@@ -92,7 +92,7 @@ export const useHanglowStore = create(
           brand: '코스알엑스',
           category: '스킨케어',
           description: '달팽이 점액 여과물 함유 에센스',
-          imageUrl: '/images/products/cosrx-snail.jpg',
+          imageUrl: 'https://m.media-amazon.com/images/I/61p-wtpDraL._SL1500_.jpg',
           price: 22000,
         },
         {
@@ -101,7 +101,7 @@ export const useHanglowStore = create(
           brand: '미샤',
           category: '스킨케어',
           description: '피부 리뉴얼을 돕는 발효 에센스',
-          imageUrl: '/images/products/missha-time.jpg',
+          imageUrl: 'https://misshaus.com/cdn/shop/products/TimeRevolutionTheFirstEssenceEnriched........jpg?v=1747410540',
           price: 48000,
         },
       ],
@@ -112,49 +112,49 @@ export const useHanglowStore = create(
           name: '명동 화장품 거리',
           location: '서울시 중구 명동',
           description: '다양한 K-뷰티 브랜드 매장이 밀집된 쇼핑 명소',
-          imageUrl: '/images/hotspots/myeongdong.jpg',
+          imageUrl: 'https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202301/19/2ccb6c44-83fb-49ed-968c-7f82594ced98.jpg',
         },
         {
           id: 'h2',
-          name: '가로수길 뷰티 샵',
-          location: '서울시 강남구 신사동',
+          name: '성수동 뷰티 로드',
+          location: '서울특별시 성동구 성수동',
           description: '트렌디한 뷰티 브랜드와 편집숍이 있는 거리',
-          imageUrl: '/images/hotspots/garosu.jpg',
+          imageUrl: 'http://tnnews.co.kr/wp-content/uploads/2024/12/%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81N%EC%84%B1%EC%88%980.jpg',
         },
         {
           id: 'h3',
-          name: '올리브영 강남점',
-          location: '서울시 강남구 강남대로',
+          name: '올리브영N 성수',
+          location: '서울시 성동구 성수동',
           description: '한국 최대 H&B 스토어 올리브영의 대형 매장',
-          imageUrl: '/images/hotspots/oliveyoung.jpg',
+          imageUrl: 'https://img.newspim.com/news/2022/11/28/2211281456130530.jpg',
         },
         {
           id: 'h4',
           name: '롯데백화점 에비뉴엘 명품관',
           location: '서울시 중구 소공동',
           description: '다양한 럭셔리 브랜드와 고급 K-뷰티 브랜드가 입점한 백화점',
-          imageUrl: '/images/hotspots/lotte.jpg',
-        },
+          imageUrl: 'https://www.busan.com/nas/data/content/image/2017/06/29/20170629000077_0.jpg',
+        }
       ],
 
       trendingContent: [
         {
           id: 't1',
           title: '올리브영 인기 아이템 TOP 10',
-          thumbnail: '/images/content/olive-young-top10.jpg',
-          url: '/trends/olive-young-top10',
+          thumbnail: 'https://www.elle.co.kr/resources/online/online_image/2024/12/11/e63fa19a-c8b4-4147-b42e-ca7d9c872bfc.jpg',
+          url: '/',
         },
         {
           id: 't2',
-          title: '2023 한국 화장품 트렌드',
-          thumbnail: '/images/content/2023-trends.jpg',
-          url: '/trends/2023-trends',
+          title: '2025 한국 화장품 트렌드',
+          thumbnail: 'https://openads-real.s3.amazonaws.com/openadsAdmin/images/contsImg/20250304135900102_aj2gJDib4ECmcN9EmINM.png',
+          url: '/',
         },
         {
           id: 't3',
           title: '한국 여행시 꼭 사야할 스킨케어 제품',
-          thumbnail: '/images/content/must-buy.jpg',
-          url: '/trends/must-buy-skincare',
+          thumbnail: 'https://measurechina.oss-cn-hongkong.aliyuncs.com/files/trendier%20blog%20(in%20measurecommerce.ai)/Japan_k-skincare_Thumbnail.jpg',
+          url: '/',
         },
       ],
       
@@ -192,10 +192,10 @@ export const useHanglowStore = create(
       setLanguage: (language) => set((state) => {
         console.log('스토어에서 언어 변경:', language, '이전 언어:', state.user.language);
         return {
-          user: {
-            ...state.user,
-            language,
-          },
+        user: {
+          ...state.user,
+          language,
+        },
         };
       }),
       
@@ -262,7 +262,7 @@ export const useHanglowStore = create(
       })),
     }),
     {
-      name: 'hanglow-storage',
+      name: 'hanglow-storage-v2',
       storage: createJSONStorage(() => {
         if (typeof window !== 'undefined') {
           return localStorage;
