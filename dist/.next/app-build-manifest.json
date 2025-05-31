@@ -1,0 +1,55 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-6e716b167a1e2615.js",
+      "static/chunks/4bd1b696-1897831b3bbea01c.js",
+      "static/chunks/684-67926090b0b9cd7b.js",
+      "static/chunks/main-app-8f018d3f767d9554.js",
+      "static/chunks/app/_not-found/page-f76c6b05adeed9bd.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-6e716b167a1e2615.js",
+      "static/chunks/4bd1b696-1897831b3bbea01c.js",
+      "static/chunks/684-67926090b0b9cd7b.js",
+      "static/chunks/main-app-8f018d3f767d9554.js",
+      "static/css/84c6eb3674e1171a.css",
+      "static/chunks/app/layout-f4955c572c129428.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-6e716b167a1e2615.js",
+      "static/chunks/4bd1b696-1897831b3bbea01c.js",
+      "static/chunks/684-67926090b0b9cd7b.js",
+      "static/chunks/main-app-8f018d3f767d9554.js",
+      "static/css/27906e03e0334ee0.css",
+      "static/chunks/386-febedfb0ad343778.js",
+      "static/chunks/app/page-150241a973379164.js"
+    ],
+    "/products/[id]/page": [
+      "static/chunks/webpack-6e716b167a1e2615.js",
+      "static/chunks/4bd1b696-1897831b3bbea01c.js",
+      "static/chunks/684-67926090b0b9cd7b.js",
+      "static/chunks/main-app-8f018d3f767d9554.js",
+      "static/css/0d11fcc4ec32e917.css",
+      "static/chunks/817-7364edd87d6b0d7e.js",
+      "static/chunks/app/products/[id]/page-c1f740f2727ebc8c.js"
+    ],
+    "/scan/page": [
+      "static/chunks/webpack-6e716b167a1e2615.js",
+      "static/chunks/4bd1b696-1897831b3bbea01c.js",
+      "static/chunks/684-67926090b0b9cd7b.js",
+      "static/chunks/main-app-8f018d3f767d9554.js",
+      "static/css/ca842552e0f2863d.css",
+      "static/chunks/386-febedfb0ad343778.js",
+      "static/chunks/app/scan/page-45bcfab1474856f6.js"
+    ],
+    "/wishlist/page": [
+      "static/chunks/webpack-6e716b167a1e2615.js",
+      "static/chunks/4bd1b696-1897831b3bbea01c.js",
+      "static/chunks/684-67926090b0b9cd7b.js",
+      "static/chunks/main-app-8f018d3f767d9554.js",
+      "static/css/17a6cac415750686.css",
+      "static/chunks/817-7364edd87d6b0d7e.js",
+      "static/chunks/app/wishlist/page-55e52a594e6826bb.js"
+    ]
+  }
+}
