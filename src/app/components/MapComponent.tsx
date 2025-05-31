@@ -17,14 +17,13 @@ interface MapProps {
 }
 
 export default function MapComponent({ hotspots, onSelectHotspot }: MapProps) {
-  const [activeSpot, setActiveSpot] = useState<string | null>(null);
+  const [selectedHotspot, setSelectedHotspot] = useState<string | null>(null);
   
   // 구글 지도를 위한 정확한 마커 위치 계산
   const calculateMarkerPosition = (lat: number, lng: number) => {
     // 구글 지도 iframe의 현재 뷰포트 (서울 중심, 줌 레벨 13)
     // 중심: 37.5665, 126.9447222 기준
     const mapCenter = { lat: 37.5665, lng: 126.9447222 };
-    const zoomLevel = 13;
     
     // Web Mercator 투영법 기반 계산
     const latRange = 0.11; // 약 ±0.055도 범위
@@ -76,7 +75,7 @@ export default function MapComponent({ hotspots, onSelectHotspot }: MapProps) {
               return (
                 <div 
                   key={hotspot.id}
-                  className={`${styles.customMarker} ${activeSpot === hotspot.id ? styles.active : ''}`}
+                  className={`${styles.customMarker} ${selectedHotspot === hotspot.id ? styles.active : ''}`}
                   style={{ 
                     position: 'absolute',
                     left: position.left, 
@@ -84,7 +83,7 @@ export default function MapComponent({ hotspots, onSelectHotspot }: MapProps) {
                     transform: 'translate(-50%, -100%)'
                   }}
                   onClick={() => {
-                    setActiveSpot(hotspot.id);
+                    setSelectedHotspot(hotspot.id);
                     if (onSelectHotspot) {
                       onSelectHotspot(hotspot.id);
                     }
@@ -111,9 +110,9 @@ export default function MapComponent({ hotspots, onSelectHotspot }: MapProps) {
           {hotspots.map((hotspot) => (
             <div 
               key={hotspot.id}
-              className={`${styles.hotspotInfoCard} ${activeSpot === hotspot.id ? styles.active : ''}`}
+              className={`${styles.hotspotInfoCard} ${selectedHotspot === hotspot.id ? styles.active : ''}`}
               onClick={() => {
-                setActiveSpot(hotspot.id);
+                setSelectedHotspot(hotspot.id);
                 if (onSelectHotspot) {
                   onSelectHotspot(hotspot.id);
                 }

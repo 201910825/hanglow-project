@@ -5,7 +5,7 @@ import styles from './FeatureComponents.module.css';
 
 export default function LocationFinderComponent() {
   const [isSearching, setIsSearching] = useState(false);
-  const [nearbySpots, setNearbySpots] = useState([
+  const [nearbySpots] = useState([
     { name: '올리브영 명동점', distance: '200m', rating: 4.8, discount: '15% 할인' },
     { name: '이니스프리 명동점', distance: '350m', rating: 4.6, discount: '10% 할인' },
     { name: '네이처리퍼블릭 명동점', distance: '450m', rating: 4.5, discount: '20% 할인' },

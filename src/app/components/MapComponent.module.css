@@ -224,7 +224,7 @@
 }
 
 /* Leaflet 커스텀 마커 스타일 */
-:global(.custom-marker) {
+.mapWrapper :global(.custom-marker) {
   background: transparent !important;
   border: none !important;
 }
@@ -477,9 +477,10 @@
 }
 
 /* Leaflet 커스텀 마커 클래스명 수정 */
-:global(.leaflet-custom-marker) {
+.mapWrapper :global(.leaflet-custom-marker) {
   background: transparent !important;
   border: none !important;
+  box-shadow: none !important;
 }
 
 /* 서울 지도 배경 */

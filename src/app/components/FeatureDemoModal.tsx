@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import LocationFinderComponent from './LocationFinderComponent';
 import CouponComponent from './CouponComponent';
 import TranslationComponent from './TranslationComponent';

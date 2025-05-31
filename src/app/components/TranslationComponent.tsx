@@ -53,7 +53,7 @@ export default function TranslationComponent() {
     setTranslatedText(inputText);
   };
 
-  const handleQuickPhrase = (phrase: any) => {
+  const handleQuickPhrase = (phrase: { korean: string; english: string }) => {
     setInputText(phrase.korean);
     setTranslatedText(phrase.english);
   };

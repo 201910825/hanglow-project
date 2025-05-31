@@ -13,8 +13,7 @@ export default function HomeTab() {
     user, 
     recommendedProducts, 
     beautyHotspots, 
-    trendingContent,
-    saveProduct 
+    trendingContent
   } = useHanglowStore();
   
   const [modalState, setModalState] = useState<{
@@ -27,12 +26,6 @@ export default function HomeTab() {
   
   // 번역 함수 단축어
   const t = (key: string) => getTranslation(key, user.language);
-  
-  // 제품 저장 핸들러
-  const handleSaveProduct = (product: any) => {
-    saveProduct(product);
-    alert(`${product.name} 제품이 저장되었습니다!`);
-  };
 
   // 모달 열기
   const openModal = (featureType: 'location' | 'coupon' | 'translation') => {
