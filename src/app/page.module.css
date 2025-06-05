@@ -48,29 +48,35 @@
   background-color: var(--primary-color);
 }
 
-.langSelector {
+.languageButton {
   display: flex;
+  align-items: center;
+}
+
+.langButton {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
-}
-
-.langSelector button {
+  padding: 0.5rem 1rem;
   border: 1px solid var(--gray);
-  background: none;
-  padding: 0.3rem 0.6rem;
-  font-size: 0.8rem;
+  background: white;
   border-radius: var(--border-radius);
+  cursor: pointer;
   transition: var(--transition);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
 }
 
-.langSelector button:hover {
-  border-color: var(--dark-gray);
-}
-
-.langSelector button.active {
-  background-color: var(--primary-color);
-  color: white;
+.langButton:hover {
   border-color: var(--primary-color);
-  }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.langButton:active {
+  transform: translateY(0);
+}
 
 /* 메인 컨텐츠 스타일 */
 .main {
@@ -579,7 +585,7 @@
   text-align: center;
   color: var(--dark-gray);
   font-size: 0.9rem;
-  }
+}
 
 /* 스캔 컨텐츠 스타일 */
 .scanContent {
@@ -587,7 +593,7 @@
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--box-shadow);
-  }
+}
 
 /* 추가 기능 데모 스타일 */
 .additionalFeatures {
@@ -764,13 +770,13 @@
     text-align: center;
   }
   
-  .langSelector {
+  .languageButton {
     gap: 0.3rem;
     justify-content: center;
     flex-wrap: wrap;
   }
   
-  .langSelector button {
+  .langButton {
     padding: 0.3rem 0.6rem;
     font-size: 0.8rem;
     min-width: 50px;
@@ -860,7 +866,11 @@
     max-width: 100px;
   }
   
-  .langSelector button {
+  .languageButton {
+    gap: 0.25rem;
+  }
+  
+  .langButton {
     padding: 0.25rem 0.4rem;
     font-size: 0.7rem;
     min-width: 40px;

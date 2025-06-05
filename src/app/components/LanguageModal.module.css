@@ -1,0 +1,235 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 1px solid #eee;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.content {
+  padding: 28px;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 0 0 24px 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.languageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.languageCard {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  text-align: left;
+}
+
+.languageCard:hover {
+  border-color: #007AFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.15);
+}
+
+.languageCard.active {
+  border-color: #007AFF;
+  background: #f0f8ff;
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+}
+
+.languageFlag {
+  font-size: 28px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.languageInfo {
+  flex: 1;
+}
+
+.languageName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.languageEnglish {
+  font-size: 14px;
+  color: #666;
+}
+
+.selectedIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  background: #007AFF;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.note {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.note p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 16px;
+  }
+  
+  .modal {
+    max-height: 95vh;
+  }
+  
+  .header {
+    padding: 20px 24px;
+  }
+  
+  .header h2 {
+    font-size: 18px;
+  }
+  
+  .content {
+    padding: 24px;
+  }
+  
+  .languageGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .languageCard {
+    padding: 14px;
+  }
+  
+  .languageFlag {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+  
+  .languageName {
+    font-size: 15px;
+  }
+  
+  .languageEnglish {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 12px;
+  }
+  
+  .header {
+    padding: 16px 20px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .languageCard {
+    padding: 12px;
+  }
+  
+  .languageFlag {
+    font-size: 22px;
+    margin-right: 10px;
+  }
+} 

@@ -9,6 +9,7 @@ import FeatureDemoModal from './FeatureDemoModal';
 import RecommendationModal, { RecommendationResult } from './RecommendationModal';
 import RecommendationResultComponent from './RecommendationResult';
 import CountrySelectModal from './CountrySelectModal';
+import LanguageModal from './LanguageModal';
 import styles from '../page.module.css';
 import { CustomRecommend } from '../types';
 import { useRouter } from 'next/navigation';
@@ -38,6 +39,7 @@ export default function HomeTab() {
   const [recommendationResult, setRecommendationResult] = useState<RecommendationResult | null>(null);
   const [countrySelectModalOpen, setCountrySelectModalOpen] = useState(false);
   const [selectedCountryResult, setSelectedCountryResult] = useState<RecommendationResult | null>(null);
+  const [languageModalOpen, setLanguageModalOpen] = useState(false);
   
   const router = useRouter();
   
@@ -323,6 +325,13 @@ export default function HomeTab() {
               <p>음성과 텍스트로 실시간 번역 서비스를 이용하세요</p>
               <button className={styles.tryButton}>체험하기</button>
             </div>
+            
+            <div className={styles.demoCard} onClick={() => setLanguageModalOpen(true)}>
+              <div className={styles.demoIcon}>🔧</div>
+              <h4>언어 설정</h4>
+              <p>13개 언어로 앱을 이용하고 자동 번역 기능을 체험하세요</p>
+              <button className={styles.tryButton}>설정하기</button>
+            </div>
           </div>
         </div>
       </section>
@@ -343,6 +352,11 @@ export default function HomeTab() {
         isOpen={countrySelectModalOpen}
         onClose={() => setCountrySelectModalOpen(false)}
         onCountrySelect={handleCountrySelect}
+      />
+
+      <LanguageModal
+        isOpen={languageModalOpen}
+        onClose={() => setLanguageModalOpen(false)}
       />
     </div>
   );

@@ -7,20 +7,36 @@ import HomeTab from './components/HomeTab';
 import ProductsTab from './components/ProductsTab';
 import HotspotsTab from './components/HotspotsTab';
 import MyPageTab from './components/MyPageTab';
+import LanguageModal from './components/LanguageModal';
 import styles from './page.module.css';
 
 export default function Home() {
   const { user, setLanguage } = useHanglowStore();
   const [activeTab, setActiveTab] = useState("home");
-  
-  // 언어 변경 핸들러
-  const handleLanguageChange = (lang: string) => {
-    console.log('언어 변경:', lang);
-    setLanguage(lang);
-  };
+  const [languageModalOpen, setLanguageModalOpen] = useState(false);
   
   // 번역 함수 단축어
   const t = (key: string) => getTranslation(key, user.language);
+
+  // 현재 언어의 플래그 가져오기
+  const getCurrentLanguageFlag = () => {
+    const languageFlags: { [key: string]: string } = {
+      'ko': '🇰🇷',
+      'en': '🇺🇸',
+      'zh': '🇨🇳',
+      'ja': '🇯🇵',
+      'es': '🇪🇸',
+      'fr': '🇫🇷',
+      'de': '🇩🇪',
+      'it': '🇮🇹',
+      'pt': '🇵🇹',
+      'nl': '🇳🇱',
+      'sv': '🇸🇪',
+      'no': '🇳🇴',
+      'da': '🇩🇰',
+    };
+    return languageFlags[user.language] || '🌐';
+  };
 
   return (
     <div className={styles.page}>
@@ -58,30 +74,13 @@ export default function Home() {
             {t('nav_mypage')}
           </button>
         </nav>
-        <div className={styles.langSelector}>
+        <div className={styles.languageButton}>
           <button 
-            className={`${styles.navButton} ${user.language === 'ko' ? styles.active : ''}`}
-            onClick={() => handleLanguageChange('ko')}
+            className={styles.langButton}
+            onClick={() => setLanguageModalOpen(true)}
+            title="언어 설정 / Language Settings"
           >
-            KO
-          </button>
-          <button 
-            className={`${styles.navButton} ${user.language === 'en' ? styles.active : ''}`}
-            onClick={() => handleLanguageChange('en')}
-          >
-            EN
-          </button>
-          <button 
-            className={`${styles.navButton} ${user.language === 'zh' ? styles.active : ''}`}
-            onClick={() => handleLanguageChange('zh')}
-          >
-            中文
-          </button>
-          <button 
-            className={`${styles.navButton} ${user.language === 'ja' ? styles.active : ''}`}
-            onClick={() => handleLanguageChange('ja')}
-          >
-            日本語
+            {getCurrentLanguageFlag()} {user.language.toUpperCase()}
           </button>
         </div>
       </header>
@@ -105,6 +104,11 @@ export default function Home() {
         )}
         {activeTab === 'mypage' && <MyPageTab />}
       </main>
+
+      <LanguageModal
+        isOpen={languageModalOpen}
+        onClose={() => setLanguageModalOpen(false)}
+      />
     </div>
   );
 }
