@@ -899,4 +899,559 @@
   .demoCard h4 {
     font-size: 1rem;
   }
+}
+
+/* 국가별 핫 아이템 스타일 */
+.countryHotGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.countryCard {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  transition: var(--transition);
+  border: 1px solid var(--light-gray);
+}
+
+.countryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.countryHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.countryFlag {
+  font-size: 2rem;
+}
+
+.countryHeader h3 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.hotItemsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hotItemCard {
+  position: relative;
+  background: var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.hotItemCard:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.rankBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primary-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.hotItemCard .productImage {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 0.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hotItemCard .productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hotItemCard h4 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hotItemCard .brand {
+  font-size: 0.7rem;
+  color: var(--gray);
+  margin: 0.2rem 0;
+}
+
+.hotItemCard .price {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0.2rem 0;
+}
+
+.hotItemCard .description {
+  font-size: 0.6rem;
+  color: var(--dark-gray);
+  margin: 0.3rem 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.viewAllButton {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.viewAllButton:hover {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  transform: translateY(-1px);
+}
+
+/* 반응형 스타일 - 국가별 핫 아이템 */
+@media (max-width: 768px) {
+  .countryHotGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .countryCard {
+    padding: 1rem;
+  }
+  
+  .hotItemsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+  
+  .hotItemCard {
+    padding: 0.8rem;
+  }
+  
+  .hotItemCard .productImage {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .hotItemCard h4 {
+    font-size: 0.7rem;
+  }
+  
+  .hotItemCard .brand,
+  .hotItemCard .price {
+    font-size: 0.6rem;
+  }
+  
+  .hotItemCard .description {
+    font-size: 0.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countryHotGrid {
+    gap: 1rem;
+  }
+  
+  .countryHeader {
+    margin-bottom: 1rem;
+  }
+  
+  .countryFlag {
+    font-size: 1.5rem;
+  }
+  
+  .countryHeader h3 {
+    font-size: 1.1rem;
+  }
+  
+  .hotItemsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 카테고리별 세로 열 레이아웃 스타일 */
+.categoryColumnsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.categoryColumn {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  transition: var(--transition);
+  border: 1px solid var(--light-gray);
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryColumn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.categoryColumnHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.categoryIcon {
+  font-size: 1.8rem;
+}
+
+.categoryColumnHeader h3 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.categoryItemsList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  max-height: 400px;
+  padding-right: 0.5rem;
+}
+
+.categoryItemsList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.categoryItemsList::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 4px;
+}
+
+.categoryItemsList::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.categoryItemCard {
+  position: relative;
+  background: var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  transition: var(--transition);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.categoryItemCard:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+
+.categoryRankBadge {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: var(--primary-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.categoryProductImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.categoryProductImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.categoryItemInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.categoryItemInfo h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.categoryItemInfo .brand {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin: 0.2rem 0;
+  padding: 0;
+}
+
+.categoryItemInfo .price {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0.2rem 0;
+  padding: 0;
+}
+
+.categoryItemInfo .shopType {
+  font-size: 0.7rem;
+  color: var(--secondary-color);
+  margin: 0.2rem 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.categoryItemInfo .description {
+  font-size: 0.7rem;
+  color: var(--dark-gray);
+  margin: 0.3rem 0 0;
+  padding: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.categoryViewAllButton {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.categoryViewAllButton:hover {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  transform: translateY(-1px);
+}
+
+/* 반응형 스타일 - 카테고리별 세로 열 */
+@media (max-width: 768px) {
+  .categoryColumnsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .categoryColumn {
+    padding: 1rem;
+    max-height: 500px;
+  }
+  
+  .categoryItemsList {
+    max-height: 300px;
+  }
+  
+  .categoryItemCard {
+    padding: 0.8rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .categoryProductImage {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+  }
+  
+  .categoryItemInfo h4 {
+    font-size: 0.8rem;
+  }
+  
+  .categoryItemInfo .brand,
+  .categoryItemInfo .price,
+  .categoryItemInfo .shopType {
+    font-size: 0.7rem;
+  }
+  
+  .categoryItemInfo .description {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryColumnsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .categoryColumn {
+    max-height: 450px;
+  }
+  
+  .categoryColumnHeader {
+    margin-bottom: 1rem;
+  }
+  
+  .categoryIcon {
+    font-size: 1.5rem;
+  }
+  
+  .categoryColumnHeader h3 {
+    font-size: 1.1rem;
+  }
+  
+  .categoryItemsList {
+    max-height: 250px;
+  }
+}
+
+/* 국가별 핫 아이템을 위한 새로운 스타일 추가 */
+.categoryPreview {
+  margin-bottom: 1.5rem;
+}
+
+.categoryPreview h4 {
+  margin: 0 0 0.8rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.noItems {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #999;
+  font-size: 0.9rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px dashed #dee2e6;
+}
+
+.noItems p {
+  margin: 0;
+}
+
+.hotItemCard {
+  position: relative;
+  background: var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 0.8rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.hotItemCard:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.itemInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemInfo h4 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.itemInfo .brand {
+  font-size: 0.7rem;
+  color: var(--gray);
+  margin: 0.2rem 0;
+  padding: 0;
+}
+
+.itemInfo .price {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0.2rem 0;
+  padding: 0;
+}
+
+/* 반응형 스타일 업데이트 */
+@media (max-width: 768px) {
+  .categoryPreview h4 {
+    font-size: 0.9rem;
+  }
+  
+  .itemInfo h4 {
+    font-size: 0.7rem;
+  }
+  
+  .itemInfo .brand,
+  .itemInfo .price {
+    font-size: 0.6rem;
+  }
 } 

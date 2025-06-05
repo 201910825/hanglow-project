@@ -36,11 +36,8 @@ export default function HotspotsTab() {
       <div className={styles.hotspotList}>
         {beautyHotspots.map((hotspot) => (
           <div key={hotspot.id} className={styles.hotspotListItem}>
-            <div className={styles.hotspotImage}>
-              <img src={hotspot.imageUrl} alt={hotspot.name} />
-            </div>
             <div className={styles.hotspotInfo}>
-              <img src={hotspot.imageUrl} alt={hotspot.name} />
+              <img src={hotspot.imageUrl} alt={hotspot.name} style={{ width: '100%', height: '300px' }} />
               <h3>{hotspot.name}</h3>
               <p className={styles.location}>{hotspot.location}</p>
               <p className={styles.description}>{hotspot.description}</p>

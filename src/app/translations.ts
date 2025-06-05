@@ -31,7 +31,11 @@ const translations: TranslationLanguages = {
     section_hotspots: '뷰티 핫플레이스',
     section_trending: '트렌딩 콘텐츠',
     section_features: 'HANGLOW 특별 기능',
+    section_country_hot: '국가별 핫 아이템',
+    section_category_hot: '카테고리별 인기 아이템',
     more_button: '더 보기',
+    view_all: '전체 보기',
+    rank: '위',
     
     // 특별 기능
     feature_before: '여행 전',
@@ -109,7 +113,11 @@ const translations: TranslationLanguages = {
     section_hotspots: 'Beauty Hotspots',
     section_trending: 'Trending Content',
     section_features: 'HANGLOW Special Features',
+    section_country_hot: 'Country Hot Items',
+    section_category_hot: 'Category Hot Items',
     more_button: 'View More',
+    view_all: 'View All',
+    rank: 'Rank',
     
     // Special Features
     feature_before: 'Before Trip',
@@ -187,7 +195,11 @@ const translations: TranslationLanguages = {
     section_hotspots: '美妆热门地点',
     section_trending: '流行内容',
     section_features: 'HANGLOW特色功能',
+    section_country_hot: '国家热销产品',
+    section_category_hot: '类别热销产品',
     more_button: '查看更多',
+    view_all: '查看全部',
+    rank: '排名',
     
     // 特色功能
     feature_before: '旅行前',
@@ -265,7 +277,11 @@ const translations: TranslationLanguages = {
     section_hotspots: 'ビューティースポット',
     section_trending: 'トレンドコンテンツ',
     section_features: 'HANGLOWの特別機能',
+    section_country_hot: '国別ホットアイテム',
+    section_category_hot: 'カテゴリーホットアイテム',
     more_button: 'もっと見る',
+    view_all: '全て見る',
+    rank: 'ランク',
     
     // 特別機能
     feature_before: '旅行前',
@@ -318,7 +334,27 @@ const translations: TranslationLanguages = {
     privacy: 'プライバシーポリシー',
     contact: 'お問い合わせ',
     copyright: '© 2023 HANGLOW. All rights reserved.',
-  }
+  },
+  es: { 
+  },
+  fr: {
+  },
+  de: {
+  },
+  it: {
+  },
+  ar: {
+  },
+  hi: {
+  },
+  pt: {
+  },
+  nl: {
+  },
+  sv: {
+  },
+  no: {
+  },
 };
 
 // 번역 함수

@@ -5,11 +5,13 @@ import LocationFinderComponent from './LocationFinderComponent';
 import CouponComponent from './CouponComponent';
 import TranslationComponent from './TranslationComponent';
 import styles from './FeatureDemoModal.module.css';
+import Language from './language';
+import CustomRecommend from './CustomRecommend';
 
 interface FeatureDemoModalProps {
   isOpen: boolean;
   onClose: () => void;
-  featureType: 'location' | 'coupon' | 'translation' | null;
+  featureType: 'location' | 'coupon' | 'translation' | 'language' | 'custom' | null;
 }
 
 export default function FeatureDemoModal({ isOpen, onClose, featureType }: FeatureDemoModalProps) {
@@ -23,6 +25,10 @@ export default function FeatureDemoModal({ isOpen, onClose, featureType }: Featu
         return <CouponComponent />;
       case 'translation':
         return <TranslationComponent />;
+      case 'language':
+        return <Language />;
+      case 'custom':
+        return <CustomRecommend />;
       default:
         return null;
     }
@@ -36,6 +42,10 @@ export default function FeatureDemoModal({ isOpen, onClose, featureType }: Featu
         return '할인 쿠폰 제공';
       case 'translation':
         return '실시간 통역';
+      case 'language':
+        return '언어 설정';
+      case 'custom':
+        return '개인 맟춤추천';
       default:
         return '';
     }

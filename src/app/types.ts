@@ -10,6 +10,73 @@ export interface Product {
   imageUrl: string;
   price: number;
 }
+export interface CustomRecommend {
+  [key: string]: {
+    own: string;
+    gift: string;
+  };
+}
+
+// 국가별 핫 아이템 타입 정의
+export interface CountryHotItem {
+  id: string;
+  country: string;
+  countryCode: string;
+  flag: string;
+  skincare: {
+    id: string;
+    name: string;
+    brand: string;
+    imageUrl: string;
+    price: number;
+    popularityRank: number;
+    description: string;
+  }[];
+  makeup: {
+    id: string;
+    name: string;
+    brand: string;
+    imageUrl: string;
+    price: number;
+    popularityRank: number;
+    description: string;
+  }[];
+  fragrance: {
+    id: string;
+    name: string;
+    brand: string;
+    imageUrl: string;
+    price: number;
+    popularityRank: number;
+    description: string;
+  }[];
+  stores: {
+    id: string;
+    name: string;
+    brand: string;
+    imageUrl: string;
+    price: number;
+    popularityRank: number;
+    description: string;
+  }[];
+}
+
+// 카테고리별 핫 아이템 타입 정의
+export interface CategoryHotItem {
+  id: string;
+  category: string;
+  icon: string;
+  items: {
+    id: string;
+    name: string;
+    brand: string;
+    imageUrl: string;
+    price: number;
+    popularityRank: number;
+    description: string;
+    type?: string; // 매장의 경우 매장 타입
+  }[];
+}
 
 // 사용자 여행 정보 타입 정의
 export interface TravelInfo {
