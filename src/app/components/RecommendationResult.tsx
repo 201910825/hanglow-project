@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { getTranslation } from '../translations';
 import { useHanglowStore } from '../store/hanglowStore';
 import { RecommendationResult } from './RecommendationModal';
 import styles from './RecommendationResult.module.css';
@@ -14,8 +13,7 @@ interface RecommendationResultProps {
 
 export default function RecommendationResultComponent({ result, onClose }: RecommendationResultProps) {
   const router = useRouter();
-  const { user, countryHotItems } = useHanglowStore();
-  const t = (key: string) => getTranslation(key, user.language);
+  const { countryHotItems } = useHanglowStore();
 
   // 제품 상세 페이지로 이동
   const handleProductClick = (productId: string) => {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './language.module.css';
-import CustomRecommend from './CustomRecommend';
+
 export default function Language() {
   const [language, setLanguage] = useState('ko');
 

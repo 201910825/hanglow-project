@@ -11,7 +11,7 @@ import LanguageModal from './components/LanguageModal';
 import styles from './page.module.css';
 
 export default function Home() {
-  const { user, setLanguage } = useHanglowStore();
+  const { user } = useHanglowStore();
   const [activeTab, setActiveTab] = useState("home");
   const [languageModalOpen, setLanguageModalOpen] = useState(false);
   

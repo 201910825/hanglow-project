@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import { useHanglowStore } from '../store/hanglowStore';
 import { getTranslation } from '../translations';
 import TravelPhaseSelector from './TravelPhaseSelector';
@@ -11,7 +10,6 @@ import RecommendationResultComponent from './RecommendationResult';
 import CountrySelectModal from './CountrySelectModal';
 import LanguageModal from './LanguageModal';
 import styles from '../page.module.css';
-import { CustomRecommend } from '../types';
 import { useRouter } from 'next/navigation';
 
 export default function HomeTab() {
@@ -19,13 +17,7 @@ export default function HomeTab() {
     user, 
     countryHotItems,
     trendingContent,
-    customRecommend,
   } = useHanglowStore();
-  const [recommend, setRecommend] = useState<CustomRecommend>({});
-  
-  useEffect(() => {
-    setRecommend(customRecommend[0]);
-  }, [customRecommend]);
   
   const [modalState, setModalState] = useState<{
     isOpen: boolean;

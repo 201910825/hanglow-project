@@ -1,8 +1,6 @@
 "use client";
 
 import React from 'react';
-import { getTranslation } from '../translations';
-import { useHanglowStore } from '../store/hanglowStore';
 import styles from './CountrySelectModal.module.css';
 
 interface CountrySelectModalProps {
@@ -23,9 +21,6 @@ const countries = [
 ];
 
 export default function CountrySelectModal({ isOpen, onClose, onCountrySelect }: CountrySelectModalProps) {
-  const { user } = useHanglowStore();
-  const t = (key: string) => getTranslation(key, user.language);
-
   if (!isOpen) return null;
 
   const handleCountrySelect = (countryCode: string) => {

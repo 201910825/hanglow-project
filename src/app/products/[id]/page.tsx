@@ -60,9 +60,9 @@ export default function ProductDetailPage() {
         <div className={styles.productInfo}>
           <div className={styles.brandBadge}>
             <span>{product.brand}</span>
-            {(product as any).country && (
+            {(product as { country?: string; flag?: string }).country && (
               <span className={styles.countryBadge}>
-                {(product as any).flag} {(product as any).country}
+                {(product as { country?: string; flag?: string }).flag} {(product as { country?: string; flag?: string }).country}
               </span>
             )}
           </div>
@@ -71,8 +71,8 @@ export default function ProductDetailPage() {
           {product.price && product.price > 0 && (
             <div className={styles.priceSection}>
               <span className={styles.price}>{product.price.toLocaleString()}원</span>
-              {(product as any).popularityRank && (
-                <span className={styles.rankBadge}>인기 #{(product as any).popularityRank}</span>
+              {(product as { popularityRank?: number }).popularityRank && (
+                <span className={styles.rankBadge}>인기 #{(product as { popularityRank?: number }).popularityRank}</span>
               )}
             </div>
           )}

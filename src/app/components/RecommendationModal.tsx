@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import { getTranslation } from '../translations';
-import { useHanglowStore } from '../store/hanglowStore';
 import styles from './RecommendationModal.module.css';
 
 interface RecommendationModalProps {
@@ -36,45 +34,39 @@ const ageGroups = [
 const genders = ['남성', '여성'];
 
 export default function RecommendationModal({ isOpen, onClose, onResult }: RecommendationModalProps) {
-  const { user } = useHanglowStore();
-  const [step, setStep] = useState(1);
-  const [selectedType, setSelectedType] = useState<'personal' | 'gift' | null>(null);
-  const [selectedNationality, setSelectedNationality] = useState<string>('');
-  const [selectedAge, setSelectedAge] = useState<string>('');
-  const [selectedGender, setSelectedGender] = useState<string>('');
-
-  const t = (key: string) => getTranslation(key, user.language);
+  const [step, setStep] = useState<'type' | 'details'>('type');
+  const [nationality, setNationality] = useState('');
+  const [age, setAge] = useState('');
+  const [gender, setGender] = useState('');
 
   if (!isOpen) return null;
 
   const handleTypeSelect = (type: 'personal' | 'gift') => {
-    setSelectedType(type);
     if (type === 'personal') {
       onResult({ type: 'personal' });
       onClose();
     } else {
-      setStep(2);
+      setStep('details');
     }
   };
 
   const handleGiftInfoComplete = () => {
-    if (selectedNationality && selectedAge && selectedGender) {
+    if (nationality && age && gender) {
       onResult({
         type: 'gift',
-        nationality: selectedNationality,
-        age: selectedAge,
-        gender: selectedGender
+        nationality: nationality,
+        age: age,
+        gender: gender
       });
       onClose();
     }
   };
 
   const resetModal = () => {
-    setStep(1);
-    setSelectedType(null);
-    setSelectedNationality('');
-    setSelectedAge('');
-    setSelectedGender('');
+    setStep('type');
+    setNationality('');
+    setAge('');
+    setGender('');
   };
 
   const handleClose = () => {
@@ -89,7 +81,7 @@ export default function RecommendationModal({ isOpen, onClose, onResult }: Recom
           ✕
         </button>
         
-        {step === 1 && (
+        {step === 'type' && (
           <div className={styles.step}>
             <h2>누구를 위한 추천인가요?</h2>
             <div className={styles.typeButtonGrid}>
@@ -114,7 +106,7 @@ export default function RecommendationModal({ isOpen, onClose, onResult }: Recom
           </div>
         )}
 
-        {step === 2 && (
+        {step === 'details' && (
           <div className={styles.step}>
             <h2>선물받을 분에 대해 알려주세요</h2>
             
@@ -124,8 +116,8 @@ export default function RecommendationModal({ isOpen, onClose, onResult }: Recom
                 {countries.map((country) => (
                   <button
                     key={country.code}
-                    className={`${styles.optionButton} ${selectedNationality === country.code ? styles.selected : ''}`}
-                    onClick={() => setSelectedNationality(country.code)}
+                    className={`${styles.optionButton} ${nationality === country.code ? styles.selected : ''}`}
+                    onClick={() => setNationality(country.code)}
                   >
                     <span className={styles.flag}>{country.flag}</span>
                     <span>{country.name}</span>
@@ -137,13 +129,13 @@ export default function RecommendationModal({ isOpen, onClose, onResult }: Recom
             <div className={styles.inputSection}>
               <h3>연령대</h3>
               <div className={styles.ageGrid}>
-                {ageGroups.map((age) => (
+                {ageGroups.map((ageGroup) => (
                   <button
-                    key={age}
-                    className={`${styles.optionButton} ${selectedAge === age ? styles.selected : ''}`}
-                    onClick={() => setSelectedAge(age)}
+                    key={ageGroup}
+                    className={`${styles.optionButton} ${age === ageGroup ? styles.selected : ''}`}
+                    onClick={() => setAge(ageGroup)}
                   >
-                    {age}
+                    {ageGroup}
                   </button>
                 ))}
               </div>
@@ -152,13 +144,13 @@ export default function RecommendationModal({ isOpen, onClose, onResult }: Recom
             <div className={styles.inputSection}>
               <h3>성별</h3>
               <div className={styles.genderGrid}>
-                {genders.map((gender) => (
+                {genders.map((genderOption) => (
                   <button
-                    key={gender}
-                    className={`${styles.optionButton} ${selectedGender === gender ? styles.selected : ''}`}
-                    onClick={() => setSelectedGender(gender)}
+                    key={genderOption}
+                    className={`${styles.optionButton} ${gender === genderOption ? styles.selected : ''}`}
+                    onClick={() => setGender(genderOption)}
                   >
-                    {gender}
+                    {genderOption}
                   </button>
                 ))}
               </div>
@@ -167,14 +159,14 @@ export default function RecommendationModal({ isOpen, onClose, onResult }: Recom
             <div className={styles.actionButtons}>
               <button 
                 className={styles.backButton} 
-                onClick={() => setStep(1)}
+                onClick={() => setStep('type')}
               >
                 이전
               </button>
               <button 
-                className={`${styles.nextButton} ${selectedNationality && selectedAge && selectedGender ? styles.enabled : ''}`}
+                className={`${styles.nextButton} ${nationality && age && gender ? styles.enabled : ''}`}
                 onClick={handleGiftInfoComplete}
-                disabled={!selectedNationality || !selectedAge || !selectedGender}
+                disabled={!nationality || !age || !gender}
               >
                 추천 받기
               </button>

@@ -1,20 +1,17 @@
-import { useEffect, useState } from 'react';
-import styles from './language.module.css';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import { useHanglowStore } from '../store/hanglowStore';
-import { CustomRecommend as CustomRecommendType } from '../types';
+import styles from './CustomRecommend.module.css';
 
+export default function CustomRecommendComponent() {
+  const { user } = useHanglowStore();
+  const [language, setLanguage] = useState<string>('ko');
 
+  useEffect(() => {
+    setLanguage(user.language); 
+  }, [user.language]);
 
-export default function CustomRecommend() {
-    const { customRecommend, user } = useHanglowStore();
-    const [language, setLanguage] = useState<string>('ko');
-    const [recommend, setRecommend] = useState<CustomRecommendType>({});
-    useEffect(() => {
-        setRecommend(customRecommend[0]);
-    }, [customRecommend]);
-    useEffect(() => {
-        setLanguage(user.language);
-    }, [user.language]);
   return (
     <div className={styles.recommendContainer}>
       <h1>Custom Recommend</h1> 

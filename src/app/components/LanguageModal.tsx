@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useHanglowStore } from '../store/hanglowStore';
-import { getTranslation } from '../translations';
 import styles from './LanguageModal.module.css';
 
 interface LanguageModalProps {
@@ -28,7 +27,6 @@ const SUPPORTED_LANGUAGES = [
 
 export default function LanguageModal({ isOpen, onClose }: LanguageModalProps) {
   const { user, setLanguage } = useHanglowStore();
-  const t = (key: string) => getTranslation(key, user.language);
 
   if (!isOpen) return null;
 
